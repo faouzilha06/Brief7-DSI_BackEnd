@@ -111,3 +111,9 @@ CREATE TABLE IF NOT EXISTS Commands(
 CONSTRAINT `fk_command_sensi_theme` FOREIGN KEY (`id_sensi_theme`) REFERENCES `Sensi_themes` (`id_sensi_theme`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_command_contact` FOREIGN KEY (`id_contact`) REFERENCES `Contacts` (`id_contact`) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `user_tests` (
+  `id_user` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `role` varchar(70) NOT NULL,
+  `password` varchar(70) NOT NULL
+);
