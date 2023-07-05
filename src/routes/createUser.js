@@ -6,7 +6,7 @@ module.exports = (app) => {
   app.post('/user_tests', (req, res) => {
     User.create(req.body)
       .then(users => {
-        const message = `Le user ${req.body.name} a bien été crée.`
+        const message = `L\' user  a bien été crée.`
         res.json({ message, data: users })
       })
       .catch(error => {
@@ -16,7 +16,7 @@ module.exports = (app) => {
         if(error instanceof UniqueConstraintError){ //47
           return res.status(400).json({message : error.message, data: error})
         }
-        const message = 'Le pokémon n\a pas pu être ajouté. Réessayez dans quelques instants.'
+        const message = 'L\' utilisateur n\a pas pu être ajouté. Réessayez dans quelques instants.'
         res.status(500).json({message, data: error})
       })
   })
