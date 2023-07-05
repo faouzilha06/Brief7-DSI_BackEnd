@@ -14,7 +14,7 @@ module.exports = (app) => {
         }
         // vérification si user existe sinon retourne message erreur avec code statut 404
 
-        bcrypt.compare(req.body.password, user.password).then(isPasswordValid => {
+        bcrypt.compare(req.body.password, user_test.password).then(isPasswordValid => {
         // compare du module bcrypt: permet de comparer le mdp saisi user avec le mdp encrypté dans la bdd. Evalue si mdp en clair est le même que celui sécurisé. promesse: car opération longue, il faut décrypter le mdp pour le comparer d'où la promesse car tmt async.
             if(!isPasswordValid) {
             const message = 'Le mot de passe est invalide.'
@@ -25,7 +25,7 @@ module.exports = (app) => {
             // jwt
             const token = jwt.sign(
                 // génération jeton jwt avec la méthode sign du module jwt, elle est composée de 3 paramètres pour engendrer un ejeton jwt. On le reécupère dans une constante token. Puis retour du jeton crée aux client l34
-                { userId : user.id },
+                { userId : user_test.id },
                 privateKey,
                 { expiresIn: '24h'}
             )
