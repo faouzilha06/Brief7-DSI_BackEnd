@@ -7,14 +7,14 @@ const sequelize = require('./src/db/sequelize');
 const app = express();
 // serveur web sur lequel fonctionnera notre API REST
 const port = 3000 ;
-// port sur lequel nous allons démarrer notre API REST par la suite
+// port sur lequel nous allons démarr er notre  API REST par la suite
 
 app.use(bodyParser.json());
 
 
 require('./src/routes/findAll')(app);
 require('./src/routes/findUser')(app);
-require('./src/routes/create')(app);
+require('./src/routes/createUser')(app);
 require('./src/routes/deleteUser')(app);
 require('./src/routes/updateUser')(app);
 // routes pour les requêtes concernant la connexion admin
