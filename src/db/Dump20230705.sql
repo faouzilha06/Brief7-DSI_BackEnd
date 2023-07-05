@@ -1,6 +1,6 @@
 CREATE DATABASE IF NOT EXISTS DSI_sensibilisation;
 USE dsi_sensibilisation; 
-
+-- jjjj
 
 CREATE TABLE IF NOT EXISTS Themes (
   `id_theme` INT NOT NULL AUTO_INCREMENT,
