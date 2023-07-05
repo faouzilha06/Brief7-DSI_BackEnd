@@ -1,5 +1,5 @@
 const { User } = require('../db/sequelize')
-
+const auth = require("../auth/auth");
 const { ValidationError, UniqueConstraintError} = require('sequelize')
 
 module.exports = (app) => {
