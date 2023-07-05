@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 
 require('./src/routes/findAll')(app);
 require('./src/routes/findUser')(app);
+// require('./src/routes/findByPk')(app);
 require('./src/routes/create')(app);
 require('./src/routes/deleteUser')(app);
 require('./src/routes/updateUser')(app);
