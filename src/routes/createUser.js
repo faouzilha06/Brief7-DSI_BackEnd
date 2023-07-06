@@ -6,8 +6,8 @@ const bcrypt = require('bcrypt');
 
 module.exports = (app) => {
   app.post('/user_tests', (req, res) => {
-    let password = req.body.password;
-    let username = req.body.username;
+    var password = req.body.password;
+    var username = req.body.username;
     bcrypt.hash(password , 10) 
       .then(hash => {
         User.create({ username: username , password: hash})
