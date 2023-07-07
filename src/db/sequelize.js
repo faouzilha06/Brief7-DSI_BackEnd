@@ -13,12 +13,16 @@ const sequelize = new Sequelize('dsi_sensibilisation', 'root', 'root', {
   logging: false
 })
 // Création d'une instance Sequelize avec les informations de connexion à la base de données MySQL
-
+// Create a Sequelize instance with the connection information to the MySQL database
 
 const User = UserModel(sequelize, DataTypes);
 // Création du modèle User en utilisant le modèle UserModel et ses paramètres sequelize et DataTypes
+// Create the User model using the UserModel and its sequelize and DataTypes parameters
 
 
+
+// bcrypt.hash('password', 10) 
+// .then(hash => User.create({ username: '', password: hash}))
 
 sequelize
   .query('SELECT 1')
@@ -28,7 +32,8 @@ sequelize
   .catch(error => {
     console.error('Erreur de connexion à la base de données :', error);
   });
-// Cette requête sélectionne  la valeur 1 pour vérifier si la connexion à la base de données est réussie.
+// Cette requête sélectionne  la valeur 1 pour vérifier si la connexion à la base de données est réussie
+// This query selects the value 1 to check if the database connection is successful
 
 
 module.exports = { 
