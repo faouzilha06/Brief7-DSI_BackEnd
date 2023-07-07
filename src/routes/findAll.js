@@ -1,9 +1,10 @@
 // Ce code exporte une fonction qui définit une route GET /user_tests dans une application Express
 const { User } = require("../db/sequelize");
+const auth = require("../auth/auth");
 
 module.exports = (app) => {
     // instance d'express
-    app.get('/user_tests', (req, res) => {
+    app.get('/user_tests',auth, (req, res) => {
         User.findAll()
         .then(users => {
             // enregistre une fonction de rappel qui sera exécutée lorsque la méthode findAll() sera résolue avec succès. La fonction de rappel prend un paramètre users, qui est un tableau contenant tous les utilisateurs récupérés.
